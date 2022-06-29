@@ -1,0 +1,12 @@
+__pycache__
+.antlr
+antlr_dist
+.vscode
+repos
+tmpout
+tokens_debug
+out.txt
+.DS_Store
+*.so
+*.dSYM
+*.log
