@@ -1,3 +1,4 @@
+from pickle import OBJ
 import sys
 import json
 import os
@@ -6,9 +7,9 @@ from io import TextIOWrapper
 from antlr4 import *
 from antlr4.tree.Tree import TerminalNodeImpl
 
-from antlr_dist.Python3Lexer import Python3Lexer
-from antlr_dist.Python3Parser import Python3Parser
-from antlr_dist.Python3Listener import Python3Listener
+from Antlr.Obj.Python3Lexer import Python3Lexer
+from Antlr.Obj.Python3Parser import Python3Parser
+from Antlr.Obj.Python3Listener import Python3Listener
 
 
 identifiersRulesNames = set(("NAME", "STRING_LITERAL", "BYTES_LITERAL", "DECIMAL_INTEGER", "OCT_INTEGER",

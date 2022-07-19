@@ -6,7 +6,7 @@ from typing import List, NoReturn, Tuple, Dict, Optional, TypeVar, Callable
 from collections import OrderedDict, Counter
 from sklearn.feature_extraction.text import CountVectorizer
 
-import config
+import Configuration.config as config
 
 
 class Vocab:

@@ -11,10 +11,10 @@ from typing import List, NoReturn, Tuple, Dict, Optional, TypeVar
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-import config
+import Configuration.config as config
 from featurize import Vocab, collect_features_as_list, counter_vectorize
 from recommend_algo.recommend import print_similar_and_completions, fail
-from elastic_api import ES
+from DataSourceHelper.elastic_api import ES
 
 
 logging.basicConfig(level=logging.DEBUG)
@@ -215,11 +215,6 @@ def insert_record(id: int, record: dict):
     return es_instance.insert_with_id(id, record)
 
 
-def get_nextId():
-    return 0
-    # return es_instance.records_count()
-
-
 def get_recordQuantity():
     return es_instance.records_count()
 
@@ -256,7 +251,7 @@ def run_pipeline(language: str, path: str, line: int) -> dict:
 
 def run_buildIndex(path: str, working_dir: str, language: str = 'python') -> NoReturn:
     filecnt = 0
-    id = get_nextId()
+    id = 0
 
     def get_src_path(path: str, output_file: str, language: str) -> NoReturn:
         suffix = '.java' if language == 'java' else '.py'

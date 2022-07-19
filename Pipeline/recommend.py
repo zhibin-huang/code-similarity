@@ -3,9 +3,9 @@ from collections import Counter
 from random import sample
 from sklearn.metrics.pairwise import linear_kernel
 
-import config
-from featurize import feature_list_to_doc
-from recommend_algo.cpp_module import jaccard, prune_last_jd, prune_parallel
+import Configuration.config as config
+from Pipeline.featurize import feature_list_to_doc
+from Pipeline.native.cpp_module import jaccard, prune_last_jd, prune_parallel
 
 
 # ast还原成代码
